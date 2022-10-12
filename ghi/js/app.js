@@ -39,8 +39,14 @@ window.addEventListener('DOMContentLoaded', async () => {
             for(let conference of data.conferences){
                 
                 const detailUrl = `http://localhost:8000${conference.href}`;
+
+                //returns a promise that resolves to a response object
                 const detailResponse = await fetch(detailUrl);
+
+
                 if (detailResponse.ok) {
+                    // extracts the JSON body from the response object
+                    // returns a promise that resolves to a JS object 
                     const details = await detailResponse.json();
                     const title = details.conference.name;
                     const description = details.conference.description;
