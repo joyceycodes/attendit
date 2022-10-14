@@ -25,12 +25,12 @@ window.addEventListener('DOMContentLoaded', async () => {
         event.preventDefault();
             
             // get form data
-        const formData = new FormData(formTag)
+        const formData = new FormData(formTag);
 
         // turning formData into JSON object
         const json = JSON.stringify(Object.fromEntries(formData));
         const conferenceUrl = 'http://localhost:8000/api/conferences/';
-        console.log(json)    
+
         const fetchConfig = {
             method: "post",
             body: json,
